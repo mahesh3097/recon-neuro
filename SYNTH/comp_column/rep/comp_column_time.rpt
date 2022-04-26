@@ -1,0 +1,496 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 100
+        -max_paths 100
+Design : mux
+Version: P-2019.03
+Date   : Sun Apr 24 22:13:06 2022
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  sel[2] (in)                              0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.07       0.07 f
+  out[1] (out)                             0.00       0.07 f
+  data arrival time                                   0.07
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  sel[2] (in)                              0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.07       0.07 f
+  out[2] (out)                             0.00       0.07 f
+  data arrival time                                   0.07
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[3] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[3] (in)                               0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 f
+  out[1] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[2] (in)                               0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 f
+  out[2] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[3] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[3] (in)                               0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 f
+  out[1] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[2] (in)                               0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 f
+  out[2] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[1] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[1] (in)                               0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 f
+  out[1] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[0] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[0] (in)                               0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 f
+  out[2] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[1] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[1] (in)                               0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 f
+  out[1] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[0] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[0] (in)                               0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 f
+  out[2] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  sel[2] (in)                              0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 f
+  out[1] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  sel[2] (in)                              0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 f
+  out[2] (out)                             0.00       0.06 f
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  sel[2] (in)                              0.00       0.00 f
+  U7/Z (MUX2_X1)                           0.06       0.06 r
+  out[1] (out)                             0.00       0.06 r
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  sel[2] (in)                              0.00       0.00 f
+  U6/Z (MUX2_X1)                           0.06       0.06 r
+  out[2] (out)                             0.00       0.06 r
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  sel[2] (in)                              0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.04       0.04 r
+  out[1] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sel[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  sel[2] (in)                              0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.04       0.04 r
+  out[2] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[1] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[1] (in)                               0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.04       0.04 r
+  out[1] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[0] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[0] (in)                               0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.04       0.04 r
+  out[2] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[1] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[1] (in)                               0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.04       0.04 r
+  out[1] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[0] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[0] (in)                               0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.04       0.04 r
+  out[2] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[3] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[3] (in)                               0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.04       0.04 r
+  out[1] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[2] (in)                               0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.04       0.04 r
+  out[2] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[3] (input port)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[3] (in)                               0.00       0.00 r
+  U7/Z (MUX2_X1)                           0.04       0.04 r
+  out[1] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[2] (input port)
+  Endpoint: out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[2] (in)                               0.00       0.00 r
+  U6/Z (MUX2_X1)                           0.04       0.04 r
+  out[2] (out)                             0.00       0.04 r
+  data arrival time                                   0.04
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

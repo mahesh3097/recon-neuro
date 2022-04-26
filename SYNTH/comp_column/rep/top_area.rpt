@@ -1,0 +1,257 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: P-2019.03
+Date   : Mon Apr 25 20:59:11 2022
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                         2340
+Number of nets:                          4595
+Number of cells:                         2500
+Number of combinational cells:           2036
+Number of sequential cells:               133
+Number of macros/black boxes:               0
+Number of buf/inv:                        606
+Number of references:                      66
+
+Combinational area:               2095.814001
+Buf/Inv area:                      328.510003
+Noncombinational area:             601.425978
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  2697.239979
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------------------------------
+top                               2697.2400    100.0    10.1080     0.0000  0.0000  top
+control_inst                       433.5800     16.1   395.5420     0.0000  0.0000  control
+control_inst/neuron_enable_dec       4.2560      0.2     4.2560     0.0000  0.0000  decoder_WIDTH2_1
+control_inst/r504                   29.5260      1.1    29.5260     0.0000  0.0000  control_DW_div_uns_23
+control_inst/reg_fill_dec            4.2560      0.2     4.2560     0.0000  0.0000  decoder_WIDTH2_0
+ec_0__ec                           156.4080      5.8     0.0000     0.0000  0.0000  neuron_00000010_00000003_0000000d_3
+ec_0__ec/soma                      156.4080      5.8     0.0000     0.0000  0.0000  neuron_body_00000010_00000003_0000000d_3
+ec_0__ec/soma/acc                  126.8820      4.7    10.1080    27.1320  0.0000  pac_00000010_0000000d_3
+ec_0__ec/soma/acc/b1                30.5900      1.1    30.5900     0.0000  0.0000  adder_RES5_3
+ec_0__ec/soma/acc/stages_0__adders_0__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_15
+ec_0__ec/soma/acc/stages_0__adders_1__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_14
+ec_0__ec/soma/acc/stages_0__adders_2__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_13
+ec_0__ec/soma/acc/stages_0__adders_3__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_12
+ec_0__ec/soma/acc/stages_1__adders_0__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_7
+ec_0__ec/soma/acc/stages_1__adders_1__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_6
+ec_0__ec/soma/acc/stages_2__adders_0__a1
+                                    18.6200      0.7    18.6200     0.0000  0.0000  adder_RES3_3
+ec_0__ec/soma/conv                  23.9400      0.9    10.3740    13.5660  0.0000  fsm_convert_00000003_3
+ec_0__ec/soma/epn                    5.5860      0.2     1.0640     4.5220  0.0000  edge2pulse_3
+ec_1__ec                           156.4080      5.8     0.0000     0.0000  0.0000  neuron_00000010_00000003_0000000d_2
+ec_1__ec/soma                      156.4080      5.8     0.0000     0.0000  0.0000  neuron_body_00000010_00000003_0000000d_2
+ec_1__ec/soma/acc                  126.8820      4.7    10.1080    27.1320  0.0000  pac_00000010_0000000d_2
+ec_1__ec/soma/acc/b1                30.5900      1.1    30.5900     0.0000  0.0000  adder_RES5_2
+ec_1__ec/soma/acc/stages_0__adders_0__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_11
+ec_1__ec/soma/acc/stages_0__adders_1__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_10
+ec_1__ec/soma/acc/stages_0__adders_2__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_9
+ec_1__ec/soma/acc/stages_0__adders_3__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_8
+ec_1__ec/soma/acc/stages_1__adders_0__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_5
+ec_1__ec/soma/acc/stages_1__adders_1__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_4
+ec_1__ec/soma/acc/stages_2__adders_0__a1
+                                    18.6200      0.7    18.6200     0.0000  0.0000  adder_RES3_2
+ec_1__ec/soma/conv                  23.9400      0.9    10.3740    13.5660  0.0000  fsm_convert_00000003_2
+ec_1__ec/soma/epn                    5.5860      0.2     1.0640     4.5220  0.0000  edge2pulse_2
+ec_2__ec                           156.4080      5.8     0.0000     0.0000  0.0000  neuron_00000010_00000003_0000000d_1
+ec_2__ec/soma                      156.4080      5.8     0.0000     0.0000  0.0000  neuron_body_00000010_00000003_0000000d_1
+ec_2__ec/soma/acc                  126.8820      4.7    10.1080    27.1320  0.0000  pac_00000010_0000000d_1
+ec_2__ec/soma/acc/b1                30.5900      1.1    30.5900     0.0000  0.0000  adder_RES5_1
+ec_2__ec/soma/acc/stages_0__adders_0__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_7
+ec_2__ec/soma/acc/stages_0__adders_1__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_6
+ec_2__ec/soma/acc/stages_0__adders_2__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_5
+ec_2__ec/soma/acc/stages_0__adders_3__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_4
+ec_2__ec/soma/acc/stages_1__adders_0__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_3
+ec_2__ec/soma/acc/stages_1__adders_1__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_2
+ec_2__ec/soma/acc/stages_2__adders_0__a1
+                                    18.6200      0.7    18.6200     0.0000  0.0000  adder_RES3_1
+ec_2__ec/soma/conv                  23.9400      0.9    10.3740    13.5660  0.0000  fsm_convert_00000003_1
+ec_2__ec/soma/epn                    5.5860      0.2     1.0640     4.5220  0.0000  edge2pulse_1
+ec_3__ec                           156.4080      5.8     0.0000     0.0000  0.0000  neuron_00000010_00000003_0000000d_0
+ec_3__ec/soma                      156.4080      5.8     0.0000     0.0000  0.0000  neuron_body_00000010_00000003_0000000d_0
+ec_3__ec/soma/acc                  126.8820      4.7    10.1080    27.1320  0.0000  pac_00000010_0000000d_0
+ec_3__ec/soma/acc/b1                30.5900      1.1    30.5900     0.0000  0.0000  adder_RES5_0
+ec_3__ec/soma/acc/stages_0__adders_0__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_3
+ec_3__ec/soma/acc/stages_0__adders_1__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_2
+ec_3__ec/soma/acc/stages_0__adders_2__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_1
+ec_3__ec/soma/acc/stages_0__adders_3__a1
+                                     5.0540      0.2     5.0540     0.0000  0.0000  adder_RES1_0
+ec_3__ec/soma/acc/stages_1__adders_0__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_1
+ec_3__ec/soma/acc/stages_1__adders_1__a1
+                                    10.1080      0.4    10.1080     0.0000  0.0000  adder_RES2_0
+ec_3__ec/soma/acc/stages_2__adders_0__a1
+                                    18.6200      0.7    18.6200     0.0000  0.0000  adder_RES3_0
+ec_3__ec/soma/conv                  23.9400      0.9    10.3740    13.5660  0.0000  fsm_convert_00000003_0
+ec_3__ec/soma/epn                    5.5860      0.2     1.0640     4.5220  0.0000  edge2pulse_0
+edge_input_gen_0__pe_in              7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_28
+edge_input_gen_1__pe_in              7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_27
+edge_input_gen_2__pe_in              7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_26
+edge_input_gen_3__pe_in              7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_25
+edge_output_gen_0__pe_out            7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_24
+edge_output_gen_1__pe_out            7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_23
+edge_output_gen_2__pe_out            7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_22
+edge_output_gen_3__pe_out            7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_21
+li                                  53.2000      2.0     6.3840     0.0000  0.0000  wta_00000004
+li/less_than_or_equal_0__l1          9.8420      0.4     2.3940     0.0000  0.0000  less_equal_3
+li/less_than_or_equal_0__l1/pe_le    7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_19
+li/less_than_or_equal_1__l1          9.8420      0.4     2.3940     0.0000  0.0000  less_equal_2
+li/less_than_or_equal_1__l1/pe_le    7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_18
+li/less_than_or_equal_2__l1          9.8420      0.4     2.3940     0.0000  0.0000  less_equal_1
+li/less_than_or_equal_2__l1/pe_le    7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_17
+li/less_than_or_equal_3__l1          9.8420      0.4     2.3940     0.0000  0.0000  less_equal_0
+li/less_than_or_equal_3__l1/pe_le    7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_16
+li/pe_wta                            7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_20
+stdplogic1_0__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_15
+stdplogic1_0__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_15
+stdplogic1_0__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_15
+stdplogic1_0__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_15
+stdplogic1_0__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_15
+stdplogic1_10__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_5
+stdplogic1_10__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_5
+stdplogic1_10__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_5
+stdplogic1_10__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_5
+stdplogic1_10__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_5
+stdplogic1_11__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_4
+stdplogic1_11__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_4
+stdplogic1_11__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_4
+stdplogic1_11__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_4
+stdplogic1_11__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_4
+stdplogic1_12__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_3
+stdplogic1_12__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_3
+stdplogic1_12__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_3
+stdplogic1_12__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_3
+stdplogic1_12__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_3
+stdplogic1_13__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_2
+stdplogic1_13__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_2
+stdplogic1_13__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_2
+stdplogic1_13__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_2
+stdplogic1_13__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_2
+stdplogic1_14__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_1
+stdplogic1_14__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_1
+stdplogic1_14__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_1
+stdplogic1_14__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_1
+stdplogic1_14__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_1
+stdplogic1_15__s0                   32.4520      1.2     0.0000     0.0000  0.0000  stdp_0
+stdplogic1_15__s0/casegen           14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_0
+stdplogic1_15__s0/casegen/pe         7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_0
+stdplogic1_15__s0/control            6.1180      0.2     6.1180     0.0000  0.0000  incdec_0
+stdplogic1_15__s0/flogic            11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_0
+stdplogic1_1__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_14
+stdplogic1_1__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_14
+stdplogic1_1__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_14
+stdplogic1_1__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_14
+stdplogic1_1__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_14
+stdplogic1_2__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_13
+stdplogic1_2__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_13
+stdplogic1_2__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_13
+stdplogic1_2__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_13
+stdplogic1_2__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_13
+stdplogic1_3__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_12
+stdplogic1_3__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_12
+stdplogic1_3__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_12
+stdplogic1_3__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_12
+stdplogic1_3__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_12
+stdplogic1_4__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_11
+stdplogic1_4__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_11
+stdplogic1_4__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_11
+stdplogic1_4__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_11
+stdplogic1_4__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_11
+stdplogic1_5__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_10
+stdplogic1_5__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_10
+stdplogic1_5__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_10
+stdplogic1_5__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_10
+stdplogic1_5__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_10
+stdplogic1_6__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_9
+stdplogic1_6__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_9
+stdplogic1_6__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_9
+stdplogic1_6__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_9
+stdplogic1_6__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_9
+stdplogic1_7__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_8
+stdplogic1_7__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_8
+stdplogic1_7__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_8
+stdplogic1_7__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_8
+stdplogic1_7__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_8
+stdplogic1_8__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_7
+stdplogic1_8__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_7
+stdplogic1_8__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_7
+stdplogic1_8__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_7
+stdplogic1_8__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_7
+stdplogic1_9__s0                    32.4520      1.2     0.0000     0.0000  0.0000  stdp_6
+stdplogic1_9__s0/casegen            14.6300      0.5     7.1820     0.0000  0.0000  stdp_case_gen_6
+stdplogic1_9__s0/casegen/pe          7.4480      0.3     2.9260     4.5220  0.0000  pulse2edge_6
+stdplogic1_9__s0/control             6.1180      0.2     6.1180     0.0000  0.0000  incdec_6
+stdplogic1_9__s0/flogic             11.7040      0.4    11.7040     0.0000  0.0000  stabilize_func_00000003_6
+synloop_0__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_15
+synloop_0__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse
+synloop_10__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_5
+synloop_10__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_10_00000010_00000004
+synloop_11__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_4
+synloop_11__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_11_00000010_00000004
+synloop_12__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_3
+synloop_12__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_12_00000010_00000004
+synloop_13__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_2
+synloop_13__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_13_00000010_00000004
+synloop_14__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_1
+synloop_14__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_14_00000010_00000004
+synloop_15__mux_inst                 5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_0
+synloop_15__syn                     56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_15_00000010_00000004
+synloop_1__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_14
+synloop_1__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_1_00000010_00000004
+synloop_2__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_13
+synloop_2__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_2_00000010_00000004
+synloop_3__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_12
+synloop_3__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_3_00000010_00000004
+synloop_4__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_11
+synloop_4__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_4_00000010_00000004
+synloop_5__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_10
+synloop_5__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_5_00000010_00000004
+synloop_6__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_9
+synloop_6__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_6_00000010_00000004
+synloop_7__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_8
+synloop_7__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_7_00000010_00000004
+synloop_8__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_7
+synloop_8__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_8_00000010_00000004
+synloop_9__mux_inst                  5.5860      0.2     5.5860     0.0000  0.0000  mux_00000004_1_6
+synloop_9__syn                      56.6580      2.1    38.5700    18.0880  0.0000  fsm_synapse_00000003_9_00000010_00000004
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------------------------------
+Total                                                 2095.8140   601.4260  0.0000
+
+1

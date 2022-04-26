@@ -1,0 +1,55 @@
+(DELAYFILE
+(SDFVERSION "OVI 1.0")
+(DESIGN "mux")
+(DATE "Sun Apr 24 22:13:06 2022")
+(VENDOR "NangateOpenCellLibrary")
+(PROGRAM "Synopsys Design Compiler cmos")
+(VERSION "P-2019.03")
+(DIVIDER /)
+(VOLTAGE 1.10:1.10:1.10)
+(PROCESS)
+(TEMPERATURE 25.00:25.00:25.00)
+(TIMESCALE 1ns)
+(CELL
+  (CELLTYPE "mux")
+  (INSTANCE)
+  (DELAY
+    (ABSOLUTE
+    (INTERCONNECT in[1] U7/A (0.008:0.008:0.008))
+    (INTERCONNECT in[3] U7/B (0.008:0.008:0.008))
+    (INTERCONNECT sel[2] U7/S (0.016:0.016:0.016) (0.015:0.015:0.015))
+    (INTERCONNECT in[0] U6/A (0.008:0.008:0.008))
+    (INTERCONNECT in[2] U6/B (0.008:0.008:0.008))
+    (INTERCONNECT sel[2] U6/S (0.016:0.016:0.016) (0.015:0.015:0.015))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE U7)
+  (DELAY
+    (ABSOLUTE
+    (COND (B == 1'b0) && (S == 1'b0) (IOPATH A Z (0.028:0.028:0.028) (0.049:0.049:0.049)))
+    (COND (B == 1'b1) && (S == 1'b0) (IOPATH A Z (0.028:0.028:0.028) (0.049:0.049:0.049)))
+    (COND (A == 1'b0) && (S == 1'b1) (IOPATH B Z (0.028:0.028:0.028) (0.050:0.050:0.050)))
+    (COND (A == 1'b1) && (S == 1'b1) (IOPATH B Z (0.028:0.028:0.028) (0.050:0.050:0.050)))
+    (COND (A == 1'b0) && (B == 1'b1) (IOPATH S Z (0.023:0.023:0.023) (0.040:0.040:0.040)))
+    (COND (A == 1'b1) && (B == 1'b0) (IOPATH S Z (0.040:0.040:0.040) (0.050:0.050:0.050)))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE U6)
+  (DELAY
+    (ABSOLUTE
+    (COND (B == 1'b0) && (S == 1'b0) (IOPATH A Z (0.028:0.028:0.028) (0.049:0.049:0.049)))
+    (COND (B == 1'b1) && (S == 1'b0) (IOPATH A Z (0.028:0.028:0.028) (0.049:0.049:0.049)))
+    (COND (A == 1'b0) && (S == 1'b1) (IOPATH B Z (0.028:0.028:0.028) (0.050:0.050:0.050)))
+    (COND (A == 1'b1) && (S == 1'b1) (IOPATH B Z (0.028:0.028:0.028) (0.050:0.050:0.050)))
+    (COND (A == 1'b0) && (B == 1'b1) (IOPATH S Z (0.023:0.023:0.023) (0.040:0.040:0.040)))
+    (COND (A == 1'b1) && (B == 1'b0) (IOPATH S Z (0.040:0.040:0.040) (0.050:0.050:0.050)))
+    )
+  )
+)
+)

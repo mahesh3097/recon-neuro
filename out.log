@@ -1,0 +1,2124 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version P-2019.03 for linux64 - Feb 27, 2019 
+
+                    Copyright (c) 1988 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# Set the technology
+set DESIGN top
+top
+set_host_options -max_cores 16
+1
+set search_path "/afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/
+				/afs/ece/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4/libraries/syn 
+				/afs/ece/support/synopsys/2002.09/share/image/usr/local/synopsys/2002.09/libraries/syn/ 
+				../../src/";
+/afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/
+    /afs/ece/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4/libraries/syn 
+    /afs/ece/support/synopsys/2002.09/share/image/usr/local/synopsys/2002.09/libraries/syn/ 
+    ../../src/
+set target_library "NangateOpenCellLibrary_typical.db";
+NangateOpenCellLibrary_typical.db
+#set symbol_library "cmulib18.sdb";
+set synthetic_library {standard.sldb dw_foundation.sldb}
+standard.sldb dw_foundation.sldb
+set link_library {"*" NangateOpenCellLibrary_typical.db dw_foundation.sldb}
+"*" NangateOpenCellLibrary_typical.db dw_foundation.sldb
+set synlib_wait_for_design_license {DesignWare-Foundation}
+DesignWare-Foundation
+# generate reports and save them to a file
+set OUT_DIR ./out
+./out
+set REP_DIR ./rep
+./rep
+set RTL_DIR ../src/
+../src/
+set AREA_RPT $REP_DIR/${DESIGN}_area.rpt
+./rep/top_area.rpt
+set TIME_RPT $REP_DIR/${DESIGN}_time.rpt
+./rep/top_time.rpt
+set POWER_RPT $REP_DIR/${DESIGN}_power.rpt
+./rep/top_power.rpt
+set top_mdl $DESIGN
+top
+define_design_lib WORK -path "./work"
+1
+#set_dont_touch [get_cells {neuron_snl_grl}]
+# Small loop to read in several files
+set all_files { ../../src/neuron.sv ../../src/less_equal.sv ../../src/pulse2edge.sv ../../src/wta.sv ../../src/stdp.sv ../../src/adder.sv
+../../src/edge2pulse.sv ../../src/fsm_synapse.sv ../../src/pac.sv ../../src/stdp_case_gen.sv ../../src/fsm_convert.sv ../../src/incdec.sv ../../src/neuron_body.sv ../../src/stabilize_func.sv ../../src/control.sv
+../../src/lib.sv ../../src/top.sv} 
+ ../../src/neuron.sv ../../src/less_equal.sv ../../src/pulse2edge.sv ../../src/wta.sv ../../src/stdp.sv ../../src/adder.sv
+../../src/edge2pulse.sv ../../src/fsm_synapse.sv ../../src/pac.sv ../../src/stdp_case_gen.sv ../../src/fsm_convert.sv ../../src/incdec.sv ../../src/neuron_body.sv ../../src/stabilize_func.sv ../../src/control.sv
+../../src/lib.sv ../../src/top.sv
+foreach file $all_files {
+ set module_source "$file"
+ set both "{$module_source}"
+ read_file -f sverilog $both
+ analyze -format sverilog $both 
+}
+Loading db file '/afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/NangateOpenCellLibrary_typical.db'
+Loading db file '/afs/ece/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4/libraries/syn/dw_foundation.sldb'
+Loading db file '/afs/ece/support/synopsys/synopsys.release/P-Foundation/2019.03/syn/P-2019.03/libraries/syn/gtech.db'
+Loading db file '/afs/ece/support/synopsys/synopsys.release/P-Foundation/2019.03/syn/P-2019.03/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron.db:neuron'
+Loaded 1 design.
+Current design is 'neuron'.
+Running PRESTO HDLC
+Compiling source file ../../src/neuron.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/less_equal.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/less_equal.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/less_equal.db:less_equal'
+Loaded 1 design.
+Current design is 'less_equal'.
+Running PRESTO HDLC
+Compiling source file ../../src/less_equal.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pulse2edge.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pulse2edge.sv
+
+Inferred memory devices in process
+	in routine pulse2edge line 26 in file
+		'/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pulse2edge.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      temp_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pulse2edge.db:pulse2edge'
+Loaded 1 design.
+Current design is 'pulse2edge'.
+Running PRESTO HDLC
+Compiling source file ../../src/pulse2edge.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/wta.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/wta.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/wta.sv:51: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/wta.sv:62: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/wta.db:wta'
+Loaded 1 design.
+Current design is 'wta'.
+Running PRESTO HDLC
+Compiling source file ../../src/wta.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp.db:stdp'
+Loaded 1 design.
+Current design is 'stdp'.
+Running PRESTO HDLC
+Compiling source file ../../src/stdp.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/adder.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/adder.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/adder.db:adder'
+Loaded 1 design.
+Current design is 'adder'.
+Running PRESTO HDLC
+Compiling source file ../../src/adder.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/edge2pulse.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/edge2pulse.sv
+
+Inferred memory devices in process
+	in routine edge2pulse line 23 in file
+		'/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/edge2pulse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      temp_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/edge2pulse.db:edge2pulse'
+Loaded 1 design.
+Current design is 'edge2pulse'.
+Running PRESTO HDLC
+Compiling source file ../../src/edge2pulse.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_synapse.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_synapse.sv
+
+Inferred memory devices in process
+	in routine fsm_synapse line 45 in file
+		'/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_synapse.db:fsm_synapse'
+Loaded 1 design.
+Current design is 'fsm_synapse'.
+Running PRESTO HDLC
+Compiling source file ../../src/fsm_synapse.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.sv:94: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.sv:99: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine pac line 90 in file
+		'/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    poutlatch_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     regout_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/pac.db:pac'
+Loaded 1 design.
+Current design is 'pac'.
+Running PRESTO HDLC
+Compiling source file ../../src/pac.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp_case_gen.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp_case_gen.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stdp_case_gen.db:stdp_case_gen'
+Loaded 1 design.
+Current design is 'stdp_case_gen'.
+Running PRESTO HDLC
+Compiling source file ../../src/stdp_case_gen.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_convert.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_convert.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_convert.sv:46: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine fsm_convert line 25 in file
+		'/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_convert.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/fsm_convert.db:fsm_convert'
+Loaded 1 design.
+Current design is 'fsm_convert'.
+Running PRESTO HDLC
+Compiling source file ../../src/fsm_convert.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/incdec.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/incdec.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/incdec.db:incdec'
+Loaded 1 design.
+Current design is 'incdec'.
+Running PRESTO HDLC
+Compiling source file ../../src/incdec.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron_body.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron_body.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/neuron_body.db:neuron_body'
+Loaded 1 design.
+Current design is 'neuron_body'.
+Running PRESTO HDLC
+Compiling source file ../../src/neuron_body.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stabilize_func.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stabilize_func.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stabilize_func.sv:24: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stabilize_func.sv:27: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/stabilize_func.db:stabilize_func'
+Loaded 1 design.
+Current design is 'stabilize_func'.
+Running PRESTO HDLC
+Compiling source file ../../src/stabilize_func.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/control.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/control.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/control.sv:23: the undeclared symbol 'neuron_enable' assumed to have the default net type, which is 'wire'. (VER-936)
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+|    control/61    |   16   |    1    |      4       |
+|    control/62    |   16   |    1    |      4       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/control.db:control'
+Loaded 1 design.
+Current design is 'control'.
+Running PRESTO HDLC
+Compiling source file ../../src/control.sv
+Warning:  ../../src/control.sv:23: the undeclared symbol 'neuron_enable' assumed to have the default net type, which is 'wire'. (VER-936)
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/lib.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/lib.sv
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/mux.db:mux'
+Loaded 2 designs.
+Current design is 'mux'.
+Running PRESTO HDLC
+Compiling source file ../../src/lib.sv
+Presto compilation completed successfully.
+Loading sverilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv:86: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv:99: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv:133: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv:155: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.sv:204: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/src/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+Running PRESTO HDLC
+Compiling source file ../../src/top.sv
+Presto compilation completed successfully.
+set_dont_touch [get_ports {output_spikes}]
+Information: Building the design 'neuron' instantiated from design 'top' with
+	the parameters "32'h00000010,32'h00000003,32'h0000000d". (HDL-193)
+Presto compilation completed successfully. (neuron_00000010_00000003_0000000d)
+Information: Building the design 'control' instantiated from design 'top' with
+	the parameters "32'h00000004,32'h00000010,32'h00000004". (HDL-193)
+Warning:  ../../src/control.sv:32: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/control.sv:50: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/control.sv:59: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/control.sv:58: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/control.sv:63: signed to unsigned conversion occurs. (VER-318)
+Statistics for MUX_OPs
+===========================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs |
+===========================================================================
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/61 |   16   |    1    |      4       |
+| control_00000004_00000010_00000004/62 |   16   |    1    |      4       |
+===========================================================================
+Presto compilation completed successfully. (control_00000004_00000010_00000004)
+Information: Building the design 'mux' instantiated from design 'top' with
+	the parameters "32'h00000004,1". (HDL-193)
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| mux_00000004_1/7 |   4    |    1    |      2       |
+======================================================
+Presto compilation completed successfully. (mux_00000004_1)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,0,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_0_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_0_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,1,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_1_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_1_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,2,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_2_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_2_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,3,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_3_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_3_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,4,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_4_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_4_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,5,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_5_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_5_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,6,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_6_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_6_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,7,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_7_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_7_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,8,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_8_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_8_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,9,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_9_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_9_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,10,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_10_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_10_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,11,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_11_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_11_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,12,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_12_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_12_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,13,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_13_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_13_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,14,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_14_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_14_00000010_00000004)
+Information: Building the design 'fsm_synapse' instantiated from design 'top' with
+	the parameters "32'h00000003,15,32'h00000010,32'h00000004". (HDL-193)
+
+Inferred memory devices in process
+	in routine fsm_synapse_00000003_15_00000010_00000004 line 45 in file
+		'../../src/fsm_synapse.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    w_nonzero_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     weight_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_synapse_00000003_15_00000010_00000004)
+Information: Building the design 'wta' instantiated from design 'top' with
+	the parameters "32'h00000004". (HDL-193)
+Warning:  ../../src/wta.sv:51: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/wta.sv:62: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully. (wta_00000004)
+Information: Building the design 'neuron_body' instantiated from design 'neuron_00000010_00000003_0000000d' with
+	the parameters "32'h00000010,32'h00000003,32'h0000000d". (HDL-193)
+Presto compilation completed successfully. (neuron_body_00000010_00000003_0000000d)
+Information: Building the design 'decoder' instantiated from design 'control_00000004_00000010_00000004' with
+	the parameters "2". (HDL-193)
+Presto compilation completed successfully. (decoder_WIDTH2)
+Information: Building the design 'stabilize_func' instantiated from design 'stdp' with
+	the parameters "32'h00000003". (HDL-193)
+Warning:  ../../src/stabilize_func.sv:24: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/stabilize_func.sv:27: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully. (stabilize_func_00000003)
+Information: Building the design 'pac' instantiated from design 'neuron_body_00000010_00000003_0000000d' with
+	the parameters "32'h00000010,32'h0000000d". (HDL-193)
+Warning:  ../../src/pac.sv:94: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/pac.sv:99: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine pac_00000010_0000000d line 90 in file
+		'../../src/pac.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    poutlatch_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     regout_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (pac_00000010_0000000d)
+Information: Building the design 'fsm_convert' instantiated from design 'neuron_body_00000010_00000003_0000000d' with
+	the parameters "32'h00000003". (HDL-193)
+Warning:  ../../src/fsm_convert.sv:46: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine fsm_convert_00000003 line 25 in file
+		'../../src/fsm_convert.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fsm_convert_00000003)
+Information: Building the design 'adder' instantiated from design 'pac_00000010_0000000d' with
+	the parameters "1". (HDL-193)
+Presto compilation completed successfully. (adder_RES1)
+Information: Building the design 'adder' instantiated from design 'pac_00000010_0000000d' with
+	the parameters "2". (HDL-193)
+Presto compilation completed successfully. (adder_RES2)
+Information: Building the design 'adder' instantiated from design 'pac_00000010_0000000d' with
+	the parameters "3". (HDL-193)
+Presto compilation completed successfully. (adder_RES3)
+Information: Building the design 'adder' instantiated from design 'pac_00000010_0000000d' with
+	the parameters "5". (HDL-193)
+Presto compilation completed successfully. (adder_RES5)
+1
+elaborate $top_mdl
+Running PRESTO HDLC
+Warning:  ../../src/top.sv:86: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/top.sv:99: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/top.sv:133: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/top.sv:155: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../src/top.sv:204: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully. (top)
+Elaborated 1 design.
+Current design is now 'top'.
+1
+link
+
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (48 designs)              /afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/SYNTH/comp_column/top.db, etc
+  NangateOpenCellLibrary (library) /afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/NangateOpenCellLibrary_typical.db
+  dw_foundation.sldb (library) /afs/ece/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4/libraries/syn/dw_foundation.sldb
+
+1
+uniquify
+Information: Uniquified 4 instances of design 'less_equal'. (OPT-1056)
+Information: Uniquified 29 instances of design 'pulse2edge'. (OPT-1056)
+Information: Uniquified 16 instances of design 'stdp'. (OPT-1056)
+Information: Uniquified 4 instances of design 'neuron_00000010_00000003_0000000d'. (OPT-1056)
+Information: Uniquified 4 instances of design 'neuron_body_00000010_00000003_0000000d'. (OPT-1056)
+Information: Uniquified 4 instances of design 'edge2pulse'. (OPT-1056)
+Information: Uniquified 16 instances of design 'stdp_case_gen'. (OPT-1056)
+Information: Uniquified 16 instances of design 'incdec'. (OPT-1056)
+Information: Uniquified 16 instances of design 'mux_00000004_1'. (OPT-1056)
+Information: Uniquified 2 instances of design 'decoder_WIDTH2'. (OPT-1056)
+Information: Uniquified 16 instances of design 'stabilize_func_00000003'. (OPT-1056)
+Information: Uniquified 4 instances of design 'pac_00000010_0000000d'. (OPT-1056)
+Information: Uniquified 4 instances of design 'fsm_convert_00000003'. (OPT-1056)
+Information: Uniquified 16 instances of design 'adder_RES1'. (OPT-1056)
+Information: Uniquified 8 instances of design 'adder_RES2'. (OPT-1056)
+Information: Uniquified 4 instances of design 'adder_RES3'. (OPT-1056)
+Information: Uniquified 4 instances of design 'adder_RES5'. (OPT-1056)
+1
+set_wire_load_model -name 5K_hvratio_1_1
+1
+# to avoid 'assign' statements
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+#Specify clock constraints
+#source ../../tcl/snl_time.tcl
+set_max_fanout 50 [get_designs $top_mdl]
+1
+# Uniquify (optional) and compile
+check_design
+ 
+****************************************
+check_design summary:
+Version:     P-2019.03
+Date:        Mon Apr 25 20:59:04 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    106
+    Unconnected ports (LINT-28)                                     8
+    Shorted outputs (LINT-31)                                      34
+    Constant outputs (LINT-52)                                     64
+
+Cells                                                              60
+    Cells do not drive (LINT-1)                                    56
+    Connected to power or ground (LINT-32)                          4
+
+Nets                                                               64
+    Unloaded nets (LINT-2)                                         64
+--------------------------------------------------------------------------------
+
+Warning: In design 'fsm_synapse', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', cell 'C124' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', cell 'C141' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', cell 'C144' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_0', cell 'C59' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_0', cell 'B_2' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_1', cell 'C59' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_1', cell 'B_2' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_2', cell 'C59' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_2', cell 'B_2' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_3', cell 'C59' does not drive any nets. (LINT-1)
+Warning: In design 'fsm_convert_00000003_3', cell 'B_2' does not drive any nets. (LINT-1)
+Warning: In design 'top', net 'ids[0][0]' driven by pin 'synloop[0].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[0][1]' driven by pin 'synloop[0].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[0][2]' driven by pin 'synloop[0].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[0][3]' driven by pin 'synloop[0].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[1][0]' driven by pin 'synloop[1].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[1][1]' driven by pin 'synloop[1].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[1][2]' driven by pin 'synloop[1].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[1][3]' driven by pin 'synloop[1].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[2][0]' driven by pin 'synloop[2].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[2][2]' driven by pin 'synloop[2].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[2][3]' driven by pin 'synloop[2].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[2][1]' driven by pin 'synloop[2].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[3][0]' driven by pin 'synloop[3].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[3][1]' driven by pin 'synloop[3].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[3][2]' driven by pin 'synloop[3].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[3][3]' driven by pin 'synloop[3].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[4][0]' driven by pin 'synloop[4].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[4][1]' driven by pin 'synloop[4].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[4][3]' driven by pin 'synloop[4].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[4][2]' driven by pin 'synloop[4].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[5][0]' driven by pin 'synloop[5].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[5][2]' driven by pin 'synloop[5].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[5][1]' driven by pin 'synloop[5].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[5][3]' driven by pin 'synloop[5].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[6][0]' driven by pin 'synloop[6].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[6][3]' driven by pin 'synloop[6].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[6][1]' driven by pin 'synloop[6].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[6][2]' driven by pin 'synloop[6].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[7][0]' driven by pin 'synloop[7].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[7][1]' driven by pin 'synloop[7].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[7][2]' driven by pin 'synloop[7].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[7][3]' driven by pin 'synloop[7].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[8][0]' driven by pin 'synloop[8].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[8][1]' driven by pin 'synloop[8].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[8][2]' driven by pin 'synloop[8].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[8][3]' driven by pin 'synloop[8].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[9][0]' driven by pin 'synloop[9].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[9][3]' driven by pin 'synloop[9].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[9][1]' driven by pin 'synloop[9].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[9][2]' driven by pin 'synloop[9].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[10][0]' driven by pin 'synloop[10].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[10][2]' driven by pin 'synloop[10].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[10][1]' driven by pin 'synloop[10].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[10][3]' driven by pin 'synloop[10].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[11][0]' driven by pin 'synloop[11].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[11][1]' driven by pin 'synloop[11].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[11][3]' driven by pin 'synloop[11].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[11][2]' driven by pin 'synloop[11].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[12][0]' driven by pin 'synloop[12].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[12][1]' driven by pin 'synloop[12].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[12][2]' driven by pin 'synloop[12].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[12][3]' driven by pin 'synloop[12].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[13][0]' driven by pin 'synloop[13].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[13][2]' driven by pin 'synloop[13].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[13][3]' driven by pin 'synloop[13].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[13][1]' driven by pin 'synloop[13].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[14][0]' driven by pin 'synloop[14].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[14][1]' driven by pin 'synloop[14].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[14][2]' driven by pin 'synloop[14].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[14][3]' driven by pin 'synloop[14].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[15][0]' driven by pin 'synloop[15].syn/id[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[15][1]' driven by pin 'synloop[15].syn/id[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[15][2]' driven by pin 'synloop[15].syn/id[2]' has no loads. (LINT-2)
+Warning: In design 'top', net 'ids[15][3]' driven by pin 'synloop[15].syn/id[3]' has no loads. (LINT-2)
+Warning: In design 'control', port 'e_out[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_out[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_out[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_out[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_in[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_in[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_in[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'control', port 'e_in[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fsm_synapse', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[1]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[2]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[1]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[0]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[1]'. (LINT-31)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[3]' is connected directly to output port 'id[2]'. (LINT-31)
+Warning: In design 'pac_00000010_0000000d_0', a pin on submodule 'b1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'pac_00000010_0000000d_1', a pin on submodule 'b1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'pac_00000010_0000000d_2', a pin on submodule 'b1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'pac_00000010_0000000d_3', a pin on submodule 'b1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'fsm_synapse', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_1_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_2_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_3_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_4_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_5_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_6_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_7_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_8_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_9_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_10_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_11_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_12_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_13_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_14_00000010_00000004', output port 'id[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[3]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[2]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[1]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fsm_synapse_00000003_15_00000010_00000004', output port 'id[0]' is connected directly to 'logic 1'. (LINT-52)
+1
+compile -map_effort low
+Warning: The compile -map_effort low is obsolete. Setting this variable now defaults to compile -map_effort medium. Please update your script accordingly. (OPT-1303)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | P-2019.03-DWBB_201903.0 |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.4 |     *     |
+============================================================================
+
+
+Information: There are 230 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'incdec_0'
+  Processing 'stabilize_func_00000003_0'
+  Processing 'pulse2edge_0'
+  Processing 'stdp_case_gen_0'
+  Processing 'stdp_0'
+  Processing 'less_equal_0'
+  Processing 'wta_00000004'
+  Processing 'fsm_synapse_00000003_15_00000010_00000004'
+  Processing 'mux_00000004_1_0'
+  Processing 'fsm_synapse_00000003_14_00000010_00000004'
+  Processing 'fsm_synapse_00000003_13_00000010_00000004'
+  Processing 'fsm_synapse_00000003_12_00000010_00000004'
+  Processing 'fsm_synapse_00000003_11_00000010_00000004'
+  Processing 'fsm_synapse_00000003_10_00000010_00000004'
+  Processing 'fsm_synapse_00000003_9_00000010_00000004'
+  Processing 'fsm_synapse_00000003_8_00000010_00000004'
+  Processing 'fsm_synapse_00000003_7_00000010_00000004'
+  Processing 'fsm_synapse_00000003_6_00000010_00000004'
+  Processing 'fsm_synapse_00000003_5_00000010_00000004'
+  Processing 'fsm_synapse_00000003_4_00000010_00000004'
+  Processing 'fsm_synapse_00000003_3_00000010_00000004'
+  Processing 'fsm_synapse_00000003_2_00000010_00000004'
+  Processing 'fsm_synapse_00000003_1_00000010_00000004'
+  Processing 'fsm_synapse'
+  Processing 'decoder_WIDTH2_0'
+Information: Added key list 'DesignWare' to design 'decoder_WIDTH2_0'. (DDB-72)
+  Processing 'control'
+Information: Added key list 'DesignWare' to design 'control'. (DDB-72)
+  Processing 'fsm_convert_00000003_0'
+  Processing 'edge2pulse_0'
+  Processing 'adder_RES5_0'
+  Processing 'adder_RES3_0'
+  Processing 'adder_RES2_0'
+  Processing 'adder_RES1_0'
+  Processing 'pac_00000010_0000000d_0'
+  Processing 'neuron_body_00000010_00000003_0000000d_0'
+  Processing 'neuron_00000010_00000003_0000000d_0'
+  Processing 'top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	control_inst/U135/A1 control_inst/U135/ZN control_inst/U136/A control_inst/U136/ZN 
+Information: Timing loop detected. (OPT-150)
+	control_inst/U130/A1 control_inst/U130/ZN control_inst/U131/A control_inst/U131/ZN control_inst/U135/B1 control_inst/U135/ZN control_inst/U136/A control_inst/U136/ZN 
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'ZN' on cell 'control_inst/U134'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U52'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U52'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U52'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U83'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U68'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U68'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U68'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8045'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8045'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8045'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C123/*cell*8021'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8018'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8018'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C123/*cell*8018'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8069'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C119/*cell*8066'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7949'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C129/*cell*7946'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7944'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7944'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C129/*cell*7944'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7925'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7922'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C131/*cell*7920'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7997'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7994'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C125/*cell*7992'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7991'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7991'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C125/*cell*7991'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7973'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7970'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7968'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/C127/*cell*7967'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C121/*cell*8042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C117/*cell*8090'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C117/*cell*8090'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/C117/*cell*8090'
+         to break a timing loop. (OPT-314)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C117' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C119' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C121' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C123' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C125' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C127' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C129' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C131' (OPT-854)
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Mapping 'DW_leftsh'
+  Processing 'adder_RES5_0_DW01_add_0'
+  Processing 'adder_RES5_1_DW01_add_0'
+  Processing 'adder_RES5_2_DW01_add_0'
+  Processing 'adder_RES5_3_DW01_add_0'
+IIS is disabled on 'control_inst/C117' ('control_MUX_OP_16_4_1_48'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C119' ('control_MUX_OP_16_4_1_47'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C121' ('control_MUX_OP_16_4_1_46'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C123' ('control_MUX_OP_16_4_1_45'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C125' ('control_MUX_OP_16_4_1_44'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C127' ('control_MUX_OP_16_4_1_43'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C129' ('control_MUX_OP_16_4_1_42'). It contains loop breaker cells.
+IIS is disabled on 'control_inst/C131' ('control_MUX_OP_16_4_1'). It contains loop breaker cells.
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: There are combinational cycles in 'control_inst/C131'.
+Warning: There are combinational cycles in 'control_inst/C129'.
+Warning: There are combinational cycles in 'control_inst/C127'.
+Warning: There are combinational cycles in 'control_inst/C125'.
+Warning: There are combinational cycles in 'control_inst/C123'.
+Warning: There are combinational cycles in 'control_inst/C121'.
+Warning: There are combinational cycles in 'control_inst/C119'.
+Warning: There are combinational cycles in 'control_inst/C117'.
+  Structuring 'adder_RES5_2'
+  Mapping 'adder_RES5_2'
+  Structuring 'adder_RES5_1'
+  Mapping 'adder_RES5_1'
+  Structuring 'adder_RES5_0'
+  Mapping 'adder_RES5_0'
+  Structuring 'adder_RES3_2'
+  Mapping 'adder_RES3_2'
+  Structuring 'adder_RES3_1'
+  Mapping 'adder_RES3_1'
+  Structuring 'adder_RES3_0'
+  Mapping 'adder_RES3_0'
+  Structuring 'adder_RES2_6'
+  Mapping 'adder_RES2_6'
+  Structuring 'adder_RES2_5'
+  Mapping 'adder_RES2_5'
+  Structuring 'adder_RES2_4'
+  Mapping 'adder_RES2_4'
+  Structuring 'adder_RES2_3'
+  Mapping 'adder_RES2_3'
+  Structuring 'adder_RES2_2'
+  Mapping 'adder_RES2_2'
+  Structuring 'adder_RES2_1'
+  Mapping 'adder_RES2_1'
+  Structuring 'adder_RES2_0'
+  Mapping 'adder_RES2_0'
+  Structuring 'adder_RES1_14'
+  Mapping 'adder_RES1_14'
+  Structuring 'adder_RES1_13'
+  Mapping 'adder_RES1_13'
+  Structuring 'adder_RES1_12'
+  Mapping 'adder_RES1_12'
+  Structuring 'adder_RES1_11'
+  Mapping 'adder_RES1_11'
+  Structuring 'adder_RES1_10'
+  Mapping 'adder_RES1_10'
+  Structuring 'adder_RES1_9'
+  Mapping 'adder_RES1_9'
+  Structuring 'adder_RES1_8'
+  Mapping 'adder_RES1_8'
+  Structuring 'adder_RES1_7'
+  Mapping 'adder_RES1_7'
+  Structuring 'adder_RES1_6'
+  Mapping 'adder_RES1_6'
+  Structuring 'adder_RES1_5'
+  Mapping 'adder_RES1_5'
+  Structuring 'adder_RES1_4'
+  Mapping 'adder_RES1_4'
+  Structuring 'adder_RES1_3'
+  Mapping 'adder_RES1_3'
+  Structuring 'adder_RES1_2'
+  Mapping 'adder_RES1_2'
+  Structuring 'adder_RES1_1'
+  Mapping 'adder_RES1_1'
+  Structuring 'adder_RES1_0'
+  Mapping 'adder_RES1_0'
+  Structuring 'fsm_convert_00000003_2'
+  Mapping 'fsm_convert_00000003_2'
+  Structuring 'fsm_convert_00000003_1'
+  Mapping 'fsm_convert_00000003_1'
+  Structuring 'fsm_convert_00000003_0'
+  Mapping 'fsm_convert_00000003_0'
+  Structuring 'pac_00000010_0000000d_2'
+  Mapping 'pac_00000010_0000000d_2'
+  Structuring 'pac_00000010_0000000d_1'
+  Mapping 'pac_00000010_0000000d_1'
+  Structuring 'pac_00000010_0000000d_0'
+  Mapping 'pac_00000010_0000000d_0'
+  Structuring 'stabilize_func_00000003_14'
+  Mapping 'stabilize_func_00000003_14'
+  Structuring 'stabilize_func_00000003_13'
+  Mapping 'stabilize_func_00000003_13'
+  Structuring 'stabilize_func_00000003_12'
+  Mapping 'stabilize_func_00000003_12'
+  Structuring 'stabilize_func_00000003_11'
+  Mapping 'stabilize_func_00000003_11'
+  Structuring 'stabilize_func_00000003_10'
+  Mapping 'stabilize_func_00000003_10'
+  Structuring 'stabilize_func_00000003_9'
+  Mapping 'stabilize_func_00000003_9'
+  Structuring 'stabilize_func_00000003_8'
+  Mapping 'stabilize_func_00000003_8'
+  Structuring 'stabilize_func_00000003_7'
+  Mapping 'stabilize_func_00000003_7'
+  Structuring 'stabilize_func_00000003_6'
+  Mapping 'stabilize_func_00000003_6'
+  Structuring 'stabilize_func_00000003_5'
+  Mapping 'stabilize_func_00000003_5'
+  Structuring 'stabilize_func_00000003_4'
+  Mapping 'stabilize_func_00000003_4'
+  Structuring 'stabilize_func_00000003_3'
+  Mapping 'stabilize_func_00000003_3'
+  Structuring 'stabilize_func_00000003_2'
+  Mapping 'stabilize_func_00000003_2'
+  Structuring 'stabilize_func_00000003_1'
+  Mapping 'stabilize_func_00000003_1'
+  Structuring 'stabilize_func_00000003_0'
+  Mapping 'stabilize_func_00000003_0'
+  Structuring 'decoder_WIDTH2_0'
+  Mapping 'decoder_WIDTH2_0'
+  Structuring 'mux_00000004_1_14'
+  Mapping 'mux_00000004_1_14'
+  Structuring 'mux_00000004_1_13'
+  Mapping 'mux_00000004_1_13'
+  Structuring 'mux_00000004_1_12'
+  Mapping 'mux_00000004_1_12'
+  Structuring 'mux_00000004_1_11'
+  Mapping 'mux_00000004_1_11'
+  Structuring 'mux_00000004_1_10'
+  Mapping 'mux_00000004_1_10'
+  Structuring 'mux_00000004_1_9'
+  Mapping 'mux_00000004_1_9'
+  Structuring 'mux_00000004_1_8'
+  Mapping 'mux_00000004_1_8'
+  Structuring 'mux_00000004_1_7'
+  Mapping 'mux_00000004_1_7'
+  Structuring 'mux_00000004_1_6'
+  Mapping 'mux_00000004_1_6'
+  Structuring 'mux_00000004_1_5'
+  Mapping 'mux_00000004_1_5'
+  Structuring 'mux_00000004_1_4'
+  Mapping 'mux_00000004_1_4'
+  Structuring 'mux_00000004_1_3'
+  Mapping 'mux_00000004_1_3'
+  Structuring 'mux_00000004_1_2'
+  Mapping 'mux_00000004_1_2'
+  Structuring 'mux_00000004_1_1'
+  Mapping 'mux_00000004_1_1'
+  Structuring 'mux_00000004_1_0'
+  Mapping 'mux_00000004_1_0'
+  Structuring 'incdec_14'
+  Mapping 'incdec_14'
+  Structuring 'incdec_13'
+  Mapping 'incdec_13'
+  Structuring 'incdec_12'
+  Mapping 'incdec_12'
+  Structuring 'incdec_11'
+  Mapping 'incdec_11'
+  Structuring 'incdec_10'
+  Mapping 'incdec_10'
+  Structuring 'incdec_9'
+  Mapping 'incdec_9'
+  Structuring 'incdec_8'
+  Mapping 'incdec_8'
+  Structuring 'incdec_7'
+  Mapping 'incdec_7'
+  Structuring 'incdec_6'
+  Mapping 'incdec_6'
+  Structuring 'incdec_5'
+  Mapping 'incdec_5'
+  Structuring 'incdec_4'
+  Mapping 'incdec_4'
+  Structuring 'incdec_3'
+  Mapping 'incdec_3'
+  Structuring 'incdec_2'
+  Mapping 'incdec_2'
+  Structuring 'incdec_1'
+  Mapping 'incdec_1'
+  Structuring 'incdec_0'
+  Mapping 'incdec_0'
+  Structuring 'stdp_case_gen_14'
+  Mapping 'stdp_case_gen_14'
+  Structuring 'stdp_case_gen_13'
+  Mapping 'stdp_case_gen_13'
+  Structuring 'stdp_case_gen_12'
+  Mapping 'stdp_case_gen_12'
+  Structuring 'stdp_case_gen_11'
+  Mapping 'stdp_case_gen_11'
+  Structuring 'stdp_case_gen_10'
+  Mapping 'stdp_case_gen_10'
+  Structuring 'stdp_case_gen_9'
+  Mapping 'stdp_case_gen_9'
+  Structuring 'stdp_case_gen_8'
+  Mapping 'stdp_case_gen_8'
+  Structuring 'stdp_case_gen_7'
+  Mapping 'stdp_case_gen_7'
+  Structuring 'stdp_case_gen_6'
+  Mapping 'stdp_case_gen_6'
+  Structuring 'stdp_case_gen_5'
+  Mapping 'stdp_case_gen_5'
+  Structuring 'stdp_case_gen_4'
+  Mapping 'stdp_case_gen_4'
+  Structuring 'stdp_case_gen_3'
+  Mapping 'stdp_case_gen_3'
+  Structuring 'stdp_case_gen_2'
+  Mapping 'stdp_case_gen_2'
+  Structuring 'stdp_case_gen_1'
+  Mapping 'stdp_case_gen_1'
+  Structuring 'stdp_case_gen_0'
+  Mapping 'stdp_case_gen_0'
+  Structuring 'edge2pulse_2'
+  Mapping 'edge2pulse_2'
+  Structuring 'edge2pulse_1'
+  Mapping 'edge2pulse_1'
+  Structuring 'edge2pulse_0'
+  Mapping 'edge2pulse_0'
+  Structuring 'pulse2edge_27'
+  Mapping 'pulse2edge_27'
+  Structuring 'pulse2edge_26'
+  Mapping 'pulse2edge_26'
+  Structuring 'pulse2edge_25'
+  Mapping 'pulse2edge_25'
+  Structuring 'pulse2edge_24'
+  Mapping 'pulse2edge_24'
+  Structuring 'pulse2edge_23'
+  Mapping 'pulse2edge_23'
+  Structuring 'pulse2edge_22'
+  Mapping 'pulse2edge_22'
+  Structuring 'pulse2edge_21'
+  Mapping 'pulse2edge_21'
+  Structuring 'pulse2edge_20'
+  Mapping 'pulse2edge_20'
+  Structuring 'pulse2edge_19'
+  Mapping 'pulse2edge_19'
+  Structuring 'pulse2edge_18'
+  Mapping 'pulse2edge_18'
+  Structuring 'pulse2edge_17'
+  Mapping 'pulse2edge_17'
+  Structuring 'pulse2edge_16'
+  Mapping 'pulse2edge_16'
+  Structuring 'pulse2edge_15'
+  Mapping 'pulse2edge_15'
+  Structuring 'pulse2edge_14'
+  Mapping 'pulse2edge_14'
+  Structuring 'pulse2edge_13'
+  Mapping 'pulse2edge_13'
+  Structuring 'pulse2edge_12'
+  Mapping 'pulse2edge_12'
+  Structuring 'pulse2edge_11'
+  Mapping 'pulse2edge_11'
+  Structuring 'pulse2edge_10'
+  Mapping 'pulse2edge_10'
+  Structuring 'pulse2edge_9'
+  Mapping 'pulse2edge_9'
+  Structuring 'pulse2edge_8'
+  Mapping 'pulse2edge_8'
+  Structuring 'pulse2edge_7'
+  Mapping 'pulse2edge_7'
+  Structuring 'pulse2edge_6'
+  Mapping 'pulse2edge_6'
+  Structuring 'pulse2edge_5'
+  Mapping 'pulse2edge_5'
+  Structuring 'pulse2edge_4'
+  Mapping 'pulse2edge_4'
+  Structuring 'pulse2edge_3'
+  Mapping 'pulse2edge_3'
+  Structuring 'pulse2edge_2'
+  Mapping 'pulse2edge_2'
+  Structuring 'pulse2edge_1'
+  Mapping 'pulse2edge_1'
+  Structuring 'pulse2edge_0'
+  Mapping 'pulse2edge_0'
+  Structuring 'less_equal_2'
+  Mapping 'less_equal_2'
+  Structuring 'less_equal_1'
+  Mapping 'less_equal_1'
+  Structuring 'less_equal_0'
+  Mapping 'less_equal_0'
+  Structuring 'adder_RES5_3'
+  Mapping 'adder_RES5_3'
+  Structuring 'adder_RES3_3'
+  Mapping 'adder_RES3_3'
+  Structuring 'adder_RES2_7'
+  Mapping 'adder_RES2_7'
+  Structuring 'adder_RES1_15'
+  Mapping 'adder_RES1_15'
+  Structuring 'fsm_convert_00000003_3'
+  Mapping 'fsm_convert_00000003_3'
+  Structuring 'edge2pulse_3'
+  Mapping 'edge2pulse_3'
+  Structuring 'pac_00000010_0000000d_3'
+  Mapping 'pac_00000010_0000000d_3'
+  Structuring 'incdec_15'
+  Mapping 'incdec_15'
+  Structuring 'stabilize_func_00000003_15'
+  Mapping 'stabilize_func_00000003_15'
+  Structuring 'stdp_case_gen_15'
+  Mapping 'stdp_case_gen_15'
+  Structuring 'less_equal_3'
+  Mapping 'less_equal_3'
+  Structuring 'decoder_WIDTH2_1'
+  Mapping 'decoder_WIDTH2_1'
+  Structuring 'wta_00000004'
+  Mapping 'wta_00000004'
+  Structuring 'fsm_synapse_00000003_15_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_15_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_14_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_14_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_13_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_13_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_12_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_12_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_11_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_11_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_10_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_10_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_9_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_9_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_8_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_8_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_7_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_7_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_6_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_6_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_5_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_5_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_4_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_4_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_3_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_3_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_2_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_2_00000010_00000004'
+  Structuring 'fsm_synapse_00000003_1_00000010_00000004'
+  Mapping 'fsm_synapse_00000003_1_00000010_00000004'
+  Structuring 'fsm_synapse'
+  Mapping 'fsm_synapse'
+  Structuring 'mux_00000004_1_15'
+  Mapping 'mux_00000004_1_15'
+  Structuring 'control'
+  Mapping 'control'
+  Structuring 'pulse2edge_28'
+  Mapping 'pulse2edge_28'
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C131' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C129' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C127' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C125' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C123' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C121' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C119' (OPT-854)
+Warning: Ignoring dont_touch attribute on cell(s) in multiplexor implementation 'control_inst/C117' (OPT-854)
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    2689.8      0.00       0.0     334.8                          
+    0:00:05    2711.3      0.00       0.0     112.9                          
+    0:00:05    2711.3      0.00       0.0     112.9                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    2711.3      0.00       0.0     112.9                          
+    0:00:06    2712.7      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06    2712.7      0.00       0.0       0.0                          
+    0:00:06    2712.7      0.00       0.0       0.0                          
+    0:00:06    2677.3      0.00       0.0       0.0                          
+    0:00:06    2663.2      0.00       0.0       0.0                          
+    0:00:06    2659.7      0.00       0.0       0.0                          
+    0:00:06    2657.9      0.00       0.0       0.0                          
+    0:00:06    2656.8      0.00       0.0       0.0                          
+    0:00:06    2656.8      0.00       0.0       0.0                          
+    0:00:06    2656.8      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+    0:00:06    2644.0      0.00       0.0       0.0                          
+Loading db file '/afs/andrew.cmu.edu/course/18/743/backend/45nm_Nangate/pdk_v1.3_v2010_12/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#compile -map_effortt high -boundary_optimization
+#compile -ungroup_all -map_effort low
+#remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+# change naming rules
+set bus_inference_style {%s[%d]} 
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+define_name_rules name_rule -allowed "A-Z a-z 0-9 _" -max_length 255 -type cell 
+1
+define_name_rules name_rule -allowed "A-Z a-z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*""cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+# Outputs
+if {![file exists ${OUT_DIR}]} {
+  file mkdir ${OUT_DIR}
+  puts "Creating directory ${OUT_DIR}"
+}
+if {![file exists ${REP_DIR}]} {
+  file mkdir ${REP_DIR}
+  puts "Creating directory ${REP_DIR}"
+}
+write -format verilog -hierarchy -output $OUT_DIR/{$top_mdl}_netlist.v
+Writing verilog file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/SYNTH/comp_column/out/{top}_netlist.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf -version 1.0 $OUT_DIR/{$top_mdl}.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/afs/andrew.cmu.edu/usr21/mbhadrap/18743/project/Column/SYNTH/comp_column/out/{top}.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	control_inst/U134/A control_inst/U134/ZN control_inst/U133/A control_inst/U133/ZN 
+Information: Timing loop detected. (OPT-150)
+	control_inst/U127/B1 control_inst/U127/ZN control_inst/U128/A control_inst/U128/ZN 
+Warning: Disabling timing arc between pins 'A' and 'ZN' on cell 'control_inst/U134'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U127'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U135'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U130'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U122'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U112'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U67'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U100'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U84'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U117'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U107'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U213'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U213'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U213'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U230'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U194'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U174'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U174'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U174'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U274'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U274'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U274'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U284'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U260'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U247'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U247'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U247'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U249'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U261'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U263'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U286'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U281'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U281'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U281'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U282'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U282'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U282'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U277'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'control_inst/U197'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U246'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U246'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U246'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U231'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U231'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U231'
+         to break a timing loop (originally by case_analysis). (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U216'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U216'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'control_inst/U216'
+         to break a timing loop. (OPT-314)
+1
+redirect $AREA_RPT { report_area -hierarchy }
+# type 'man report_timing' withing DC shell to see what these options mean
+#redirect $TIME_RPT { report_timing -path full -delay max -max_paths 1 -nworst 1 -true }
+redirect $TIME_RPT { report_timing -path full -delay_type max -max_paths 100 -nworst 100 }
+redirect $POWER_RPT { report_power }
+dc_shell> 
+Information: Interrupting current command. (INT-2)
+Information: One more interrupt will exit process. (INT-3)
+Information: Process terminated by interrupt. (INT-4)
