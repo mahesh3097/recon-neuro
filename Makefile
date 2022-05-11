@@ -145,7 +145,28 @@ synapse-synth:
 		cd $(SYNTH)/synapse && dc_shell -f $(CURDIR)/tcl/synth_synapse.tcl;\
 	fi;
 
+.PHONY: top-sim
+top-sim:
 	
+	if [ ! -d "$(SIM)" ]; then \
+        mkdir $(SIM) && mkdir $(SIM)/top;\
+		cd $(SIM)/top && vcs -sverilog -debug_all -full64 -top tb_column $(SRC)/tb/tb_column.sv $(SRC)/top.sv -v $(SRC)/control.sv $(SRC)/wta.sv $(SRC)/pulse2edge.sv $(SRC)/edge2pulse.sv $(SRC)/adder.sv $(SRC)/fsm_convert.sv $(SRC)/fsm_synapse.sv $(SRC)/incdec.sv $(SRC)/incdec.sv $(SRC)/less_equal.sv $(SRC)/neuron_body.sv $(SRC)/neuron.sv $(SRC)/pac.sv $(SRC)/stabilize_func.sv $(SRC)/stdp_case_gen.sv  $(SRC)/stdp.sv $(SRC)/lib.sv && ./simv;\
+	elif [ ! -d "$(SIM)/top" ]; then \
+        mkdir $(SIM)/top;\
+		cd $(SIM)/top && vcs -sverilog -debug_all -full64 -top tb_column $(SRC)/tb/tb_column.sv $(SRC)/top.sv -v $(SRC)/control.sv $(SRC)/wta.sv $(SRC)/pulse2edge.sv $(SRC)/edge2pulse.sv $(SRC)/adder.sv $(SRC)/fsm_convert.sv $(SRC)/fsm_synapse.sv $(SRC)/incdec.sv $(SRC)/incdec.sv $(SRC)/less_equal.sv $(SRC)/neuron_body.sv $(SRC)/neuron.sv $(SRC)/pac.sv $(SRC)/stabilize_func.sv $(SRC)/stdp_case_gen.sv  $(SRC)/stdp.sv $(SRC)/lib.sv && ./simv;\
+	else \
+		cd $(SIM)/top && vcs -sverilog -debug_all -full64 -top tb_column $(SRC)/tb/tb_column.sv $(SRC)/top.sv -v $(SRC)/control.sv $(SRC)/wta.sv $(SRC)/pulse2edge.sv $(SRC)/edge2pulse.sv $(SRC)/adder.sv $(SRC)/fsm_convert.sv $(SRC)/fsm_synapse.sv $(SRC)/incdec.sv $(SRC)/incdec.sv $(SRC)/less_equal.sv $(SRC)/neuron_body.sv $(SRC)/neuron.sv $(SRC)/pac.sv $(SRC)/stabilize_func.sv $(SRC)/stdp_case_gen.sv  $(SRC)/stdp.sv $(SRC)/lib.sv && ./simv;\
+	fi;
+
+.PHONY: top-wave
+top-wave:
+	if [ ! -d "$(SIM)" ]; then \
+        @echo "Perform simulation first";\
+	elif [ ! -d "$(SIM)/top" ]; then \
+        @echo "Perform simulation first";\
+	else \
+		cd $(SIM)/top && ./simv -gui;\
+	fi;
 
 .PHONY: cleanall
 cleanall:

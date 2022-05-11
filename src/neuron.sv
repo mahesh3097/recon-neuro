@@ -25,7 +25,7 @@
 
 module neuron #(parameter INP='d4,
                 parameter WRES='d3,
-                parameter THRESHOLD='d13,
+                parameter THRESHOLD='d13
                )
    (
     input logic clk,

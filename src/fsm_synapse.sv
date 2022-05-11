@@ -33,14 +33,14 @@ module fsm_synapse #(parameter WRES='d3, parameter ID='d0, parameter NUM_SYNAPSE
     input logic grst,
     input logic rstb,
     output logic [WRES-1:0] w_out,
-    output logic syn_out,
-    output logic [$clog2(NUM_SYNAPSE)-1:0] id
+    output logic syn_out
+    //output logic [$clog2(NUM_SYNAPSE)-1:0] id
    ); 
 
     logic [WRES-1:0] weight;
     logic w_nonzero; // signal to denote when the weight is non-zero
     logic syn_out_wire;
-    assign id = ID; 
+    //assign id = ID; 
 
     always_ff @ (posedge clk) begin
         // Global reset to initialize weight to zero

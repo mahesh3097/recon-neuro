@@ -36,10 +36,10 @@
 module top #(   parameter P='d4,// number of inputs
                 parameter Q='d4, //num of neurons
                 parameter WRES='d3,
-                parameter THRESHOLD='d13,
+                parameter THRESHOLD='d2,
                 parameter NUM_SYNAPSE = 'd16,
-                parameter NUM_NEURONS = 'd4,
-                parameter NUM_INPUTS = 'd4,
+                localparam NUM_NEURONS = Q,
+                localparam NUM_INPUTS = P
                )
     (
      input logic [P-1:0] input_spikes,
@@ -68,7 +68,7 @@ module top #(   parameter P='d4,// number of inputs
     logic [NUM_SYNAPSE-1:0][WRES-1:0] weights;
     logic [NUM_SYNAPSE-1:0] syn_out;
     logic [NUM_SYNAPSE-1:0] resp_func [NUM_NEURONS-1:0];  //COMES FROM CONTROL
-    logic [$clog2(NUM_INPUTS)-1:0] sel_ip [NUM_SYNAPSE-1:0];
+    logic [$clog2(NUM_INPUTS):0] sel_ip [NUM_SYNAPSE-1:0];
     logic [NUM_SYNAPSE-1:0]         e_out_map;
     logic [NUM_SYNAPSE-1:0]         e_in_map;
 
@@ -117,7 +117,7 @@ module top #(   parameter P='d4,// number of inputs
 
             
 
-            mux #(NUM_INPUTS, 1) mux_inst (.in(input_spikes), .sel(sel_ip[i]), .out(synapse_spikes[i]));
+            mux #(NUM_INPUTS + 1, 1) mux_inst (.in({0, input_spikes}), .sel(sel_ip[i]), .out(synapse_spikes[i]));
             
             fsm_synapse #(WRES, i, NUM_SYNAPSE, NUM_NEURONS) syn (.input_spike(synapse_spikes[i]),
                                     .w_init(w_init[i]),
@@ -127,8 +127,8 @@ module top #(   parameter P='d4,// number of inputs
                                     .grst(grst),
                                     .rstb(rstb),
                                     .w_out(weights[i]),
-                                    .syn_out(syn_out[i]),
-                                    .id(ids[i])
+                                    .syn_out(syn_out[i])
+                                    //.id(ids[i])
                                     );
         end
     endgenerate
